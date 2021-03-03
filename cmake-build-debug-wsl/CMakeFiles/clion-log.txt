@@ -1,0 +1,4 @@
+/usr/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_C_COMPILER=/usr/bin/clang -DCMAKE_CXX_COMPILER=/usr/bin/g++ -G "CodeBlocks - Unix Makefiles" /mnt/c/Users/WADwi/CLionProjects/project-ds
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /mnt/c/Users/WADwi/CLionProjects/project-ds/cmake-build-debug-wsl
