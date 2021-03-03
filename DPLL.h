@@ -16,13 +16,12 @@ enum Status {
 struct DPLL {
 	CNF origin;
 	CNF result;
-	bool satisfiable;
 	DPLL() = default;
 	DPLL(const CNF & src);
-	static Status assign(CNF &cnf, int id);
-	Status rsc(CNF &cnf);
+	inline static Status assign(CNF &cnf, int id);
+	inline static Status rsc(CNF &cnf);
 	Status solve();
-	static int choose(CNF &cnf);
+	inline static int choose(CNF &cnf);
 	Status perform_dpll(CNF &cnf);
 	void save_result(CNF &cnf, int status);
 };

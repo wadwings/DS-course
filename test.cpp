@@ -5,7 +5,7 @@
 #include "DPLL.h"
 #include <time.h>
 int main(){
-	DPLL dpll("/mnt/d/Desktop/程序设计综合课程设计任务及指导学生包/SAT测试备选算例/不满足算例/php-010-008.shuffled-as.sat05-1171.cnf");
+	DPLL dpll("/mnt/d/Desktop/程序设计综合课程设计任务及指导学生包/SAT测试备选算例/满足算例/S/Problem11-100.cnf");
 	int i1 = clock();
 	if(dpll.solve() != unholdable){
 		for(int i = 0; i < dpll.result.literals_len; i++){

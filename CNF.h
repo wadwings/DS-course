@@ -35,12 +35,14 @@ typedef struct Clause{
 typedef struct CNF {
 	Literal * literals;
 	Clause * clauses;
+	Clause * tail;
 	int literals_len;
 	int clauses_len;
-	CNF() = default;
+	CNF();
 	CNF(char *filename);
-	int real_len();
 	CNF(const CNF & src);
+	void add_clauses(Clause * src);
+	void remove_clauses(Clause * src);
 	char* to_string();
 	CNF& operator=(const CNF & src);
 //	~CNF();

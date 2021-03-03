@@ -74,12 +74,12 @@ clean: CMakeFiles/project_ds.dir/clean
 CMakeFiles/project_ds.dir/all:
 	$(MAKE) -f CMakeFiles/project_ds.dir/build.make CMakeFiles/project_ds.dir/depend
 	$(MAKE) -f CMakeFiles/project_ds.dir/build.make CMakeFiles/project_ds.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/mnt/c/Users/WADwi/CLionProjects/project-ds/cmake-build-debug-wsl/CMakeFiles --progress-num=1,2,3,4,5 "Built target project_ds"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/mnt/c/Users/WADwi/CLionProjects/project-ds/cmake-build-debug-wsl/CMakeFiles --progress-num=1,2,3,4,5,6 "Built target project_ds"
 .PHONY : CMakeFiles/project_ds.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/project_ds.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/c/Users/WADwi/CLionProjects/project-ds/cmake-build-debug-wsl/CMakeFiles 5
+	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/c/Users/WADwi/CLionProjects/project-ds/cmake-build-debug-wsl/CMakeFiles 6
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/project_ds.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/c/Users/WADwi/CLionProjects/project-ds/cmake-build-debug-wsl/CMakeFiles 0
 .PHONY : CMakeFiles/project_ds.dir/rule

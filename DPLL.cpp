@@ -18,9 +18,9 @@ Status DPLL::rsc(CNF &cnf) {
 				has_unit = true;
 				Literal unit = cur->literals[0];
 				cnf.literals[unit.id - 1].val = unit.val;
-				Status result = assign(cnf, unit.id);
-				if(result == holdable || result == unholdable)
-					return result;
+				Status res = assign(cnf, unit.id);
+				if(res == holdable || res == unholdable)
+					return res;
 				break;
 			}
 			pre = cur;
@@ -77,41 +77,6 @@ Status DPLL::assign(CNF &cnf, int id) {
 		}
 	}
 	return Status::pending;
-//	Value val = cnf.literals[id - 1].val;
-//	auto &clauses = cnf.clauses;
-//	Clause *pre,*cur;
-//	pre = cur = clauses;
-//	while(cur) {
-//		for (int i = 0; i < cur->size(); i++) {
-//			if (id != cur->literals[i].id) {
-//				continue;
-//			}
-//			if (val == cur->literals[i].val) {
-//				if (pre == cur){
-//					cnf.clauses = cur->next;
-//				}else{
-//					pre->next = cur->next;
-//				}
-//				cnf.clauses_len--;
-//
-//				if (cnf.clauses == nullptr) {
-//					return Status::holdable;
-//				}
-//				break;
-//			} else {
-//				for (int x = i + 1; x < cur->size(); x++)
-//					cur->literals[x - 1] = cur->literals[x];
-//				cur->count--;
-//				if (!cur->count) {
-//					return Status::unholdable;
-//				}
-//				break;
-//			}
-//		}
-//		pre = cur;
-//		cur = cur->next;
-//	}
-//	return Status::pending;
 }
 Status DPLL::solve(){
 	CNF cnf = origin; // keep original cnf clean
@@ -151,10 +116,7 @@ Status DPLL::perform_dpll(CNF &cnf) {
 }
 void DPLL::save_result(CNF &cnf, int status) {
 	if (status == holdable) {
-		satisfiable = true;
 		result = cnf;
-	} else {
-		satisfiable = false;
 	}
 }
 int DPLL::choose(CNF &cnf){

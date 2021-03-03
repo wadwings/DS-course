@@ -1,4 +1,5 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/project_ds.dir/BPuzzle.cpp.o"
   "CMakeFiles/project_ds.dir/CNF.cpp.o"
   "CMakeFiles/project_ds.dir/DPLL.cpp.o"
   "CMakeFiles/project_ds.dir/Strategy.cpp.o"

@@ -123,6 +123,33 @@ project_ds/fast:
 	$(MAKE) -f CMakeFiles/project_ds.dir/build.make CMakeFiles/project_ds.dir/build
 .PHONY : project_ds/fast
 
+BPuzzle.o: BPuzzle.cpp.o
+
+.PHONY : BPuzzle.o
+
+# target to build an object file
+BPuzzle.cpp.o:
+	$(MAKE) -f CMakeFiles/project_ds.dir/build.make CMakeFiles/project_ds.dir/BPuzzle.cpp.o
+.PHONY : BPuzzle.cpp.o
+
+BPuzzle.i: BPuzzle.cpp.i
+
+.PHONY : BPuzzle.i
+
+# target to preprocess a source file
+BPuzzle.cpp.i:
+	$(MAKE) -f CMakeFiles/project_ds.dir/build.make CMakeFiles/project_ds.dir/BPuzzle.cpp.i
+.PHONY : BPuzzle.cpp.i
+
+BPuzzle.s: BPuzzle.cpp.s
+
+.PHONY : BPuzzle.s
+
+# target to generate assembly for a file
+BPuzzle.cpp.s:
+	$(MAKE) -f CMakeFiles/project_ds.dir/build.make CMakeFiles/project_ds.dir/BPuzzle.cpp.s
+.PHONY : BPuzzle.cpp.s
+
 CNF.o: CNF.cpp.o
 
 .PHONY : CNF.o
@@ -240,6 +267,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... project_ds"
+	@echo "... BPuzzle.o"
+	@echo "... BPuzzle.i"
+	@echo "... BPuzzle.s"
 	@echo "... CNF.o"
 	@echo "... CNF.i"
 	@echo "... CNF.s"
