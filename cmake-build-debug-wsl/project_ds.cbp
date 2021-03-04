@@ -111,6 +111,12 @@
 		<Unit filename="/mnt/c/Users/WADwi/CLionProjects/project-ds/test.cpp">
 			<Option target="project_ds"/>
 		</Unit>
+		<Unit filename="/mnt/c/Users/WADwi/CLionProjects/project-ds/thread.cpp">
+			<Option target="project_ds"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/WADwi/CLionProjects/project-ds/thread.h">
+			<Option target="project_ds"/>
+		</Unit>
 		<Unit filename="/mnt/c/Users/WADwi/CLionProjects/project-ds/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>

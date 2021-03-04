@@ -6,6 +6,18 @@
 
 #IncludeRegexTransform: 
 
+C:/Users/WADwi/CLionProjects/project-ds/BPuzzle.cpp
+BPuzzle.h
+C:/Users/WADwi/CLionProjects/project-ds/BPuzzle.h
+
+C:/Users/WADwi/CLionProjects/project-ds/BPuzzle.h
+DPLL.h
+C:/Users/WADwi/CLionProjects/project-ds/DPLL.h
+
+C:/Users/WADwi/CLionProjects/project-ds/CNF.cpp
+CNF.h
+C:/Users/WADwi/CLionProjects/project-ds/CNF.h
+
 C:/Users/WADwi/CLionProjects/project-ds/CNF.h
 stdio.h
 -
@@ -14,9 +26,17 @@ stdlib.h
 string.h
 -
 
+C:/Users/WADwi/CLionProjects/project-ds/DPLL.cpp
+DPLL.h
+C:/Users/WADwi/CLionProjects/project-ds/DPLL.h
+
 C:/Users/WADwi/CLionProjects/project-ds/DPLL.h
 CNF.h
 C:/Users/WADwi/CLionProjects/project-ds/CNF.h
+Strategy.h
+C:/Users/WADwi/CLionProjects/project-ds/Strategy.h
+
+C:/Users/WADwi/CLionProjects/project-ds/Strategy.cpp
 Strategy.h
 C:/Users/WADwi/CLionProjects/project-ds/Strategy.h
 

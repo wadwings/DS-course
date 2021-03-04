@@ -4,7 +4,6 @@
 
 #include "Strategy.h"
 namespace Strategies {
-
 	int linear(CNF &cnf) {
 		for (int i = 0; i < cnf.literals_len; i++) {
 			if (cnf.literals[i].val == undefined) {
@@ -14,23 +13,17 @@ namespace Strategies {
 		return -1;
 	}
 
-//	int frequential(CNF &cnf) {
-//		std::vector<Literal> filtered;
-//		auto src = cnf.literals;
-//		std::copy_if(src.begin(), src.end(), std::back_inserter(filtered),
-//								 [](const Literal &l) {
-//									 return l.val == undefined;
-//								 });
-//		std::sort(filtered.begin(), filtered.end(),
-//							[](const Literal &a, const Literal b) {
-//								return a.count > b.count;
-//							}
-//		);
-//		if (filtered.empty()){
-//			return -1;
-//		}
-//		return filtered[0].id;
-//	}
+	int frequential(CNF &cnf) {
+		int temp = 0;
+		int id;
+		for(int i = 0; i < cnf.literals_len; i++){
+			if(cnf.literals[i].val == undefined && cnf.literals[i].count > temp){
+				id = i + 1;
+				temp = cnf.literals[i].count;
+			}
+		}
+		return id;
+	}
 //
 //	int random(CNF &cnf) {
 //		std::vector<Literal> filtered;

@@ -127,6 +127,33 @@ project_ds\fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\project_ds.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\project_ds.dir\build
 .PHONY : project_ds\fast
 
+BPuzzle.obj: BPuzzle.cpp.obj
+
+.PHONY : BPuzzle.obj
+
+# target to build an object file
+BPuzzle.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\project_ds.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\project_ds.dir\BPuzzle.cpp.obj
+.PHONY : BPuzzle.cpp.obj
+
+BPuzzle.i: BPuzzle.cpp.i
+
+.PHONY : BPuzzle.i
+
+# target to preprocess a source file
+BPuzzle.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\project_ds.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\project_ds.dir\BPuzzle.cpp.i
+.PHONY : BPuzzle.cpp.i
+
+BPuzzle.s: BPuzzle.cpp.s
+
+.PHONY : BPuzzle.s
+
+# target to generate assembly for a file
+BPuzzle.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\project_ds.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\project_ds.dir\BPuzzle.cpp.s
+.PHONY : BPuzzle.cpp.s
+
 CNF.obj: CNF.cpp.obj
 
 .PHONY : CNF.obj
@@ -235,6 +262,33 @@ test.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\project_ds.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\project_ds.dir\test.cpp.s
 .PHONY : test.cpp.s
 
+thread.obj: thread.cpp.obj
+
+.PHONY : thread.obj
+
+# target to build an object file
+thread.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\project_ds.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\project_ds.dir\thread.cpp.obj
+.PHONY : thread.cpp.obj
+
+thread.i: thread.cpp.i
+
+.PHONY : thread.i
+
+# target to preprocess a source file
+thread.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\project_ds.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\project_ds.dir\thread.cpp.i
+.PHONY : thread.cpp.i
+
+thread.s: thread.cpp.s
+
+.PHONY : thread.s
+
+# target to generate assembly for a file
+thread.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\project_ds.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\project_ds.dir\thread.cpp.s
+.PHONY : thread.cpp.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -244,6 +298,9 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... project_ds
+	@echo ... BPuzzle.obj
+	@echo ... BPuzzle.i
+	@echo ... BPuzzle.s
 	@echo ... CNF.obj
 	@echo ... CNF.i
 	@echo ... CNF.s
@@ -256,6 +313,9 @@ help:
 	@echo ... test.obj
 	@echo ... test.i
 	@echo ... test.s
+	@echo ... thread.obj
+	@echo ... thread.i
+	@echo ... thread.s
 .PHONY : help
 
 

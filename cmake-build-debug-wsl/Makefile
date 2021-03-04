@@ -258,6 +258,33 @@ test.cpp.s:
 	$(MAKE) -f CMakeFiles/project_ds.dir/build.make CMakeFiles/project_ds.dir/test.cpp.s
 .PHONY : test.cpp.s
 
+thread.o: thread.cpp.o
+
+.PHONY : thread.o
+
+# target to build an object file
+thread.cpp.o:
+	$(MAKE) -f CMakeFiles/project_ds.dir/build.make CMakeFiles/project_ds.dir/thread.cpp.o
+.PHONY : thread.cpp.o
+
+thread.i: thread.cpp.i
+
+.PHONY : thread.i
+
+# target to preprocess a source file
+thread.cpp.i:
+	$(MAKE) -f CMakeFiles/project_ds.dir/build.make CMakeFiles/project_ds.dir/thread.cpp.i
+.PHONY : thread.cpp.i
+
+thread.s: thread.cpp.s
+
+.PHONY : thread.s
+
+# target to generate assembly for a file
+thread.cpp.s:
+	$(MAKE) -f CMakeFiles/project_ds.dir/build.make CMakeFiles/project_ds.dir/thread.cpp.s
+.PHONY : thread.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -282,6 +309,9 @@ help:
 	@echo "... test.o"
 	@echo "... test.i"
 	@echo "... test.s"
+	@echo "... thread.o"
+	@echo "... thread.i"
+	@echo "... thread.s"
 .PHONY : help
 
 

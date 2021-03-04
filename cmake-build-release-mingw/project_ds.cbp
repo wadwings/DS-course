@@ -80,6 +80,12 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="C:/Users/WADwi/CLionProjects/project-ds/BPuzzle.cpp">
+			<Option target="project_ds"/>
+		</Unit>
+		<Unit filename="C:/Users/WADwi/CLionProjects/project-ds/BPuzzle.h">
+			<Option target="project_ds"/>
+		</Unit>
 		<Unit filename="C:/Users/WADwi/CLionProjects/project-ds/CNF.cpp">
 			<Option target="project_ds"/>
 		</Unit>

@@ -14,10 +14,6 @@ stdlib.h
 string.h
 -
 
-/mnt/c/Users/WADwi/CLionProjects/project-ds/DPLL.cpp
-DPLL.h
-/mnt/c/Users/WADwi/CLionProjects/project-ds/DPLL.h
-
 /mnt/c/Users/WADwi/CLionProjects/project-ds/DPLL.h
 CNF.h
 /mnt/c/Users/WADwi/CLionProjects/project-ds/CNF.h
@@ -27,4 +23,10 @@ Strategy.h
 /mnt/c/Users/WADwi/CLionProjects/project-ds/Strategy.h
 CNF.h
 /mnt/c/Users/WADwi/CLionProjects/project-ds/CNF.h
+
+/mnt/c/Users/WADwi/CLionProjects/project-ds/test.cpp
+DPLL.h
+/mnt/c/Users/WADwi/CLionProjects/project-ds/DPLL.h
+time.h
+-
 

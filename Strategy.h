@@ -9,7 +9,7 @@ namespace Strategies {
 
 	int linear(CNF &cnf);
 //	int random(CNF &cnf);
-//	int frequential(CNF &cnf);
+	int frequential(CNF &cnf);
 
 }
 

@@ -2,6 +2,8 @@
 // Created by WADwi on 2021/3/2.
 //
 #include "CNF.h"
+Literal ** CNF::map = nullptr;
+
 CNF::CNF():clauses(nullptr), literals(nullptr), tail(nullptr), clauses_len(0), literals_len(0){}
 CNF::CNF(char *filename) {
 	char c;//temp_value
@@ -25,10 +27,16 @@ CNF::CNF(char *filename) {
 	this->clauses_len = clauses_len;
 	this->literals_len = literals_len;
 	this->literals = literals_len ? (Literal *) calloc(sizeof(Literal), literals_len) : nullptr;
+	map = (Literal**)calloc(sizeof(Literal*), literals_len);
 	for (int index = 0; index < literals_len; index++) {
+		map[index] = (Literal*)calloc(sizeof(Literal), 2);
+		map[index][0].id = map[index][1].id = index + 1;
+		map[index][0].val = positive;
+		map[index][1].val = negative;
 		literals[index] = {index + 1};
 	}
-	Clause *cur = clauses = (Clause *) calloc(sizeof(Clause), 1), *pre;
+	clauses = (Clause *) calloc(sizeof(Clause), 1);
+	Clause *cur = clauses->next = (Clause *)calloc(sizeof(Clause), 1), *pre = clauses;
 	for (int index = 0; index < clauses_len; index++) {
 		fscanf(fp, "%d", &temp);
 		int count = 0;
@@ -36,10 +44,10 @@ CNF::CNF(char *filename) {
 		while (temp != 0) {
 			cur->count++;
 			if (count == 0)
-				cur->literals = (Literal *) calloc(sizeof(Literal), 1);
+				cur->literals = (Literal **) calloc(sizeof(Literal*), 1);
 			else
-				cur->literals = (Literal *) realloc(cur->literals, sizeof(Literal) * (1 + count));
-			cur->literals[count++] = {abs(temp), temp > 0 ? positive : negative};
+				cur->literals = (Literal **) realloc(cur->literals, sizeof(Literal*) * (1 + count));
+			cur->literals[count++] = &map[abs(temp) - 1][temp > 0 ? 0 : 1];
 			this->literals[abs(temp) - 1].count++;
 			this->literals[abs(temp) - 1].pol += temp > 0 ? 1 : -1;
 			fscanf(fp, "%d", &temp);
@@ -59,12 +67,12 @@ CNF::CNF(const CNF &src) : literals_len(src.literals_len), clauses_len(src.claus
 		literals[index] = src.literals[index];
 	}
 	if (src.clauses) {
-		auto cur = src.clauses;
+		auto cur = src.clauses->next;
 		clauses = (Clause *) calloc(sizeof(Clause), 1);
-		Clause *cnf_cur = clauses, *cnf_pre;
+		Clause *cnf_cur = clauses->next = (Clause *) calloc(sizeof(Clause), 1), *cnf_pre = clauses;
 		while (cur) {
 			cnf_cur->count = cur->count;
-			cnf_cur->literals = (Literal *) calloc(sizeof(Literal), cnf_cur->count);
+			cnf_cur->literals = (Literal **) calloc(sizeof(Literal*), cnf_cur->count);
 			for (int i = 0; i < cur->count; i++)
 				cnf_cur->literals[i] = cur->literals[i];
 			cnf_cur->next = (Clause *) calloc(sizeof(Clause), 1);
@@ -91,11 +99,12 @@ CNF &CNF::operator=(const CNF &src) {
 		literals[index] = src.literals[index];
 	}
 	if (src.clauses) {
-		auto cur = src.clauses;
-		Clause *cnf_cur = clauses = (Clause *) calloc(sizeof(Clause), 1), *cnf_pre;
+		auto cur = src.clauses->next;
+		clauses = (Clause *) calloc(sizeof(Clause), 1);
+		Clause *cnf_cur = clauses->next = (Clause *) calloc(sizeof(Clause), 1), *cnf_pre = clauses;
 		while (cur) {
 			cnf_cur->count = cur->count;
-			cnf_cur->literals = (Literal *) calloc(sizeof(Literal), cnf_cur->count);
+			cnf_cur->literals = (Literal **) calloc(sizeof(Literal*), cnf_cur->count);
 			for (int i = 0; i < cur->count; i++)
 				cnf_cur->literals[i] = cur->literals[i];
 			cnf_cur->next = (Clause *) calloc(sizeof(Clause), 1);
@@ -132,10 +141,10 @@ char *CNF::to_string() {
 	sprintf(temp, "%d", this->clauses_len);
 	safe_strcat(str, temp, size);
 	safe_strcat(str, "\n", size);
-	auto cur = clauses;
+	auto cur = clauses->next;
 	while (cur) {
 		for (int i = 0; i < cur->count; i++) {
-			sprintf(temp, "%d", cur->literals[i].id * cur->literals[i].val);
+			sprintf(temp, "%d", cur->literals[i]->id * cur->literals[i]->val);
 			safe_strcat(str, temp, size);
 			safe_strcat(str, " ", size);
 		}
@@ -146,34 +155,40 @@ char *CNF::to_string() {
 	return str;
 };
 
-//int CNF::real_len() {
-//	auto cur = clauses;
-//	int count = 0;
-//	while(cur){
-//		count++;
-//		cur = cur->next;
-//	}return count;
-//}
+int CNF::real_len() {
+	auto cur = clauses;
+	int count = 0;
+	while(cur){
+		count++;
+		cur = cur->next;
+	}return count;
+}
 Literal &Literal::operator=(const Literal &src) = default;
-//CNF::~CNF(){
-//	free(this->literals);
-//	Clause * pre, * cur;
-//	cur = this->clauses;
-//	while(cur){
-//		pre = cur;
-//		cur = cur->next;
-//		free(pre);
-//	}
-//}
+CNF::~CNF(){
+	free(this->literals);
+	Clause * pre, * cur;
+	cur = this->clauses;
+	while(cur){
+		pre = cur;
+		cur = cur->next;
+		free(pre->literals);
+		free(pre);
+	}
+}
 
 void CNF::add_clauses(Clause *src) {
 	if (this->tail == nullptr && this->clauses == nullptr) {
-		this->tail = this->clauses = src;
+		this->clauses->next = src;
+		this->tail = src;
 	} else {
 		this->tail->next = src;
 		this->tail = src;
 	}
 };
 
-void CNF::remove_clauses(Clause * src){
+void CNF::remove_clauses(Clause * pre){
+	auto t = pre->next;
+	pre->next = pre->next->next;
+	free(t->literals);
+	free(t);
 }

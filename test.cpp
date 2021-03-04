@@ -5,8 +5,9 @@
 #include "DPLL.h"
 #include <time.h>
 int main(){
-	DPLL dpll("/mnt/d/Desktop/程序设计综合课程设计任务及指导学生包/SAT测试备选算例/满足算例/S/Problem11-100.cnf");
+	//system("chcp 65001");//终端输出中文
 	int i1 = clock();
+	DPLL dpll("D:\\S\\problem9-100.cnf");
 	if(dpll.solve() != unholdable){
 		for(int i = 0; i < dpll.result.literals_len; i++){
 			printf("变元%d的值为%d\n", i + 1, dpll.result.literals[i].val);
@@ -15,7 +16,7 @@ int main(){
 	int i2 = clock();
 	printf("%f s", (i2 - i1) / 1000000.0);
 	fflush(stdout);
-//	CNF cnf("D:\\S\\problem1-20.cnf");
+//	CNF cnf("/mnt/d/Desktop/程序设计综合课程设计任务及指导学生包/SAT测试备选算例/满足算例/S/problem1-20.cnf");
 //	CNF cnf1 = cnf;
 //	cnf1.to_string();
 	return 0;

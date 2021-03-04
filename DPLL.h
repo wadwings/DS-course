@@ -23,6 +23,7 @@ struct DPLL {
 	Status solve();
 	inline static int choose(CNF &cnf);
 	Status perform_dpll(CNF &cnf);
+	Status check(const CNF & src);
 	void save_result(CNF &cnf, int status);
 };
 
