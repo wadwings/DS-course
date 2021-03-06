@@ -8,8 +8,8 @@
 #include <string.h>
 typedef enum Value {
 	positive = 1,
-	negative = -1,
-	undefined = 0
+	negative = 0,
+	undefined = -1
 } Value;
 
 typedef struct Literal {
@@ -27,6 +27,7 @@ typedef struct Clause{
 	int count = 0;
 	struct Clause * next = NULL;
 	Clause() = default;
+	Clause(int _size);
 	int size()const{return count;};
 	~Clause(){free(literals);};
 }Clause;

@@ -19,6 +19,7 @@ CMakeFiles/project_ds.dir/Strategy.cpp.o: ../CNF.h
 CMakeFiles/project_ds.dir/Strategy.cpp.o: ../Strategy.cpp
 CMakeFiles/project_ds.dir/Strategy.cpp.o: ../Strategy.h
 
+CMakeFiles/project_ds.dir/test.cpp.o: ../BPuzzle.h
 CMakeFiles/project_ds.dir/test.cpp.o: ../CNF.h
 CMakeFiles/project_ds.dir/test.cpp.o: ../DPLL.h
 CMakeFiles/project_ds.dir/test.cpp.o: ../Strategy.h

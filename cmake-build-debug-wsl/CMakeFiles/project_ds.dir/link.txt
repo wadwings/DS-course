@@ -1,1 +1,1 @@
-/usr/bin/g++  -g  -rdynamic CMakeFiles/project_ds.dir/DPLL.cpp.o CMakeFiles/project_ds.dir/CNF.cpp.o CMakeFiles/project_ds.dir/Strategy.cpp.o CMakeFiles/project_ds.dir/test.cpp.o CMakeFiles/project_ds.dir/BPuzzle.cpp.o CMakeFiles/project_ds.dir/thread.cpp.o  -o project_ds 
+/usr/bin/g++  -g  -rdynamic CMakeFiles/project_ds.dir/DPLL.cpp.o CMakeFiles/project_ds.dir/CNF.cpp.o CMakeFiles/project_ds.dir/Strategy.cpp.o CMakeFiles/project_ds.dir/test.cpp.o CMakeFiles/project_ds.dir/BPuzzle.cpp.o  -o project_ds 

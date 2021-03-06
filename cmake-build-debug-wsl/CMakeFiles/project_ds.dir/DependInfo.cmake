@@ -9,7 +9,6 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/mnt/c/Users/WADwi/CLionProjects/project-ds/DPLL.cpp" "/mnt/c/Users/WADwi/CLionProjects/project-ds/cmake-build-debug-wsl/CMakeFiles/project_ds.dir/DPLL.cpp.o"
   "/mnt/c/Users/WADwi/CLionProjects/project-ds/Strategy.cpp" "/mnt/c/Users/WADwi/CLionProjects/project-ds/cmake-build-debug-wsl/CMakeFiles/project_ds.dir/Strategy.cpp.o"
   "/mnt/c/Users/WADwi/CLionProjects/project-ds/test.cpp" "/mnt/c/Users/WADwi/CLionProjects/project-ds/cmake-build-debug-wsl/CMakeFiles/project_ds.dir/test.cpp.o"
-  "/mnt/c/Users/WADwi/CLionProjects/project-ds/thread.cpp" "/mnt/c/Users/WADwi/CLionProjects/project-ds/cmake-build-debug-wsl/CMakeFiles/project_ds.dir/thread.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

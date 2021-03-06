@@ -4,7 +4,9 @@
 #include "CNF.h"
 Literal ** CNF::map = nullptr;
 
-CNF::CNF():clauses(nullptr), literals(nullptr), tail(nullptr), clauses_len(0), literals_len(0){}
+Clause::Clause(int _size) : literals((Literal**)calloc(sizeof(Literal *), _size)), count(_size), next(nullptr) {};
+
+CNF::CNF():clauses(new Clause()), literals(nullptr), tail(nullptr), clauses_len(0), literals_len(0){}
 CNF::CNF(char *filename) {
 	char c;//temp_value
 	int literals_len, clauses_len, temp;
@@ -31,9 +33,9 @@ CNF::CNF(char *filename) {
 	for (int index = 0; index < literals_len; index++) {
 		map[index] = (Literal*)calloc(sizeof(Literal), 2);
 		map[index][0].id = map[index][1].id = index + 1;
-		map[index][0].val = positive;
-		map[index][1].val = negative;
-		literals[index] = {index + 1};
+		map[index][1].val = positive;
+		map[index][0].val = negative;
+		literals[index] = {index + 1, undefined};
 	}
 	clauses = (Clause *) calloc(sizeof(Clause), 1);
 	Clause *cur = clauses->next = (Clause *)calloc(sizeof(Clause), 1), *pre = clauses;
@@ -47,7 +49,7 @@ CNF::CNF(char *filename) {
 				cur->literals = (Literal **) calloc(sizeof(Literal*), 1);
 			else
 				cur->literals = (Literal **) realloc(cur->literals, sizeof(Literal*) * (1 + count));
-			cur->literals[count++] = &map[abs(temp) - 1][temp > 0 ? 0 : 1];
+			cur->literals[count++] = &map[abs(temp) - 1][temp > 0 ? 1 : 0];
 			this->literals[abs(temp) - 1].count++;
 			this->literals[abs(temp) - 1].pol += temp > 0 ? 1 : -1;
 			fscanf(fp, "%d", &temp);
@@ -144,7 +146,7 @@ char *CNF::to_string() {
 	auto cur = clauses->next;
 	while (cur) {
 		for (int i = 0; i < cur->count; i++) {
-			sprintf(temp, "%d", cur->literals[i]->id * cur->literals[i]->val);
+			sprintf(temp, "%d", cur->literals[i]->id * (cur->literals[i]->val  == positive ? 1 : -1));
 			safe_strcat(str, temp, size);
 			safe_strcat(str, " ", size);
 		}
@@ -171,24 +173,27 @@ CNF::~CNF(){
 	while(cur){
 		pre = cur;
 		cur = cur->next;
-		free(pre->literals);
-		free(pre);
+		delete pre;
 	}
 }
 
 void CNF::add_clauses(Clause *src) {
-	if (this->tail == nullptr && this->clauses == nullptr) {
+	if (this->tail == nullptr) {
 		this->clauses->next = src;
 		this->tail = src;
 	} else {
 		this->tail->next = src;
 		this->tail = src;
 	}
+	for(int i = 0; i < src->count; i++){
+		this->literals[src->literals[i]->id - 1].count++;
+		this->literals[src->literals[i]->id - 1].pol += src->literals[i]->pol == positive ? 1 : -1;
+	}
+	this->clauses_len++;
 };
 
 void CNF::remove_clauses(Clause * pre){
 	auto t = pre->next;
 	pre->next = pre->next->next;
-	free(t->literals);
-	free(t);
+	delete t;
 }

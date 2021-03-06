@@ -6,6 +6,10 @@
 
 #IncludeRegexTransform: 
 
+/mnt/c/Users/WADwi/CLionProjects/project-ds/BPuzzle.h
+DPLL.h
+/mnt/c/Users/WADwi/CLionProjects/project-ds/DPLL.h
+
 /mnt/c/Users/WADwi/CLionProjects/project-ds/CNF.h
 stdio.h
 -
@@ -25,8 +29,8 @@ CNF.h
 /mnt/c/Users/WADwi/CLionProjects/project-ds/CNF.h
 
 /mnt/c/Users/WADwi/CLionProjects/project-ds/test.cpp
-DPLL.h
-/mnt/c/Users/WADwi/CLionProjects/project-ds/DPLL.h
+BPuzzle.h
+/mnt/c/Users/WADwi/CLionProjects/project-ds/BPuzzle.h
 time.h
 -
 

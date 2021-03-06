@@ -17,7 +17,7 @@ Status DPLL::rsc(CNF &cnf) {
 				return unholdable;
 			else if(cur->size() == 1){
 				has_unit = true;
-				const auto &unit = cur->literals[0];
+				auto &unit = cur->literals[0];
 				cnf.literals[unit->id - 1].val = unit->val;
 				Status res = assign(cnf, unit->id);
 				if(res == holdable || res == unholdable)
@@ -127,7 +127,7 @@ void DPLL::save_result(CNF &cnf, int status) {
 	}
 }
 int DPLL::choose(CNF &cnf){
-	return Strategies::frequential(cnf);
+	return Strategies::linear(cnf);
 }
 
 Status DPLL::check(const CNF & src){

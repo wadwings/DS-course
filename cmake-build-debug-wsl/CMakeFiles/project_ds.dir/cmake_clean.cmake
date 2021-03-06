@@ -4,7 +4,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/project_ds.dir/DPLL.cpp.o"
   "CMakeFiles/project_ds.dir/Strategy.cpp.o"
   "CMakeFiles/project_ds.dir/test.cpp.o"
-  "CMakeFiles/project_ds.dir/thread.cpp.o"
   "project_ds"
   "project_ds.pdb"
 )
