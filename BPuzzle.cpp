@@ -3,12 +3,14 @@
 //
 
 #include "BPuzzle.h"
-
+int BPuzzle::SIZE = 6;
 BPuzzle::BPuzzle() : xy(SIZE * SIZE), sxy(this->xy + 2 * C(SIZE, 2)), sxyu(this->sxy + 2 * SIZE * C(SIZE, 2)),
 										 sxyub(this->sxyu + 4 * SIZE * C(SIZE, 2)), flattenTable((int **) calloc(sizeof(int[SIZE]), SIZE)) {
-	for (auto &cable : table) {
-		for (auto &literal : cable)
-			literal = undefined;
+	table = (Value **)calloc(sizeof(Value*), SIZE);
+	for (int x = 0; x < SIZE; x++) {
+		table[x] = (Value *)calloc(sizeof(Value), SIZE);
+		for (int y = 0; y < SIZE; y++)
+			table[x][y] = undefined;
 	}
 	int count = 0;
 	for (int x = 0; x < SIZE; x++) {
@@ -34,14 +36,50 @@ int BPuzzle::flatten(int s, int x, int y, int u) const {
 int BPuzzle::flatten(int s, int x, int y, int u, int b) const {
 	return sxyu + (s * SIZE * 2 + (u - 1) * 2 + b) * C(SIZE, 2) + flattenTable[x - 1][y - 1];
 }
+BPuzzle::BPuzzle(Value **TABLE, int size) {
+	SIZE = size;
+	xy = SIZE * SIZE;
+	sxy = this->xy + 2 * C(SIZE, 2);
+	sxyu = this->sxy + 2 * SIZE * C(SIZE, 2);
+	sxyub = this->sxyu + 4 * SIZE * C(SIZE, 2);
+	table = (Value **)calloc(sizeof(Value*), SIZE);
+	init_literals(sat.origin);
+	for (int x = 0; x < SIZE; x++) {
+		table[x] = (Value *)calloc(sizeof(Value), SIZE);
+		for (int y = 0; y < SIZE; y++){
+			table[x][y] = TABLE[x][y];
+			if(TABLE[x][y] != undefined){
+				auto t = new Clause(1);
+				t->literals[0] = &CNF::map[flatten(x + 1, y + 1)][TABLE[x][y] == positive ? 1 : 0];
+				sat.origin.add_clauses(t);
+			}
+		}
+	}
+	int count = 0;
+	flattenTable = (int **) calloc(sizeof(int *), SIZE);
+	for (int t = 0; t < SIZE; t++) {
+		flattenTable[t] = (int *) calloc(sizeof(int), SIZE);
+	}
+	for (int x = 0; x < SIZE; x++) {
+		for (int y = x + 1; y < SIZE; y++) {
+			flattenTable[x][y] = count;
+			flattenTable[y][x] = count++;
+		}
+	}
+	P2C(sat.origin);
+}
 
-BPuzzle::BPuzzle(const char *filename) : xy(SIZE * SIZE), sxy(this->xy + 2 * C(SIZE, 2)),
-																				 sxyu(this->sxy + 2 * SIZE * C(SIZE, 2)),
-																				 sxyub(this->sxyu + 4 * SIZE * C(SIZE, 2)),
-																				 sat() {
-	for (auto &cable : table) {
-		for (auto &literal : cable)
-			literal = undefined;
+BPuzzle::BPuzzle(const char *filename, int size) : sat(){
+	SIZE = size;
+	xy = SIZE * SIZE;
+	sxy = this->xy + 2 * C(SIZE, 2);
+	sxyu = this->sxy + 2 * SIZE * C(SIZE, 2);
+	sxyub = this->sxyu + 4 * SIZE * C(SIZE, 2);
+	table = (Value **)calloc(sizeof(Value*), SIZE);
+	for (int x = 0; x < SIZE; x++) {
+		table[x] = (Value *)calloc(sizeof(Value), SIZE);
+		for (int y = 0; y < SIZE; y++)
+			table[x][y] = undefined;
 	}
 	int count = 0;
 	flattenTable = (int **) calloc(sizeof(int *), SIZE);
@@ -94,7 +132,7 @@ void BPuzzle::init_literals(CNF &des) const {
 	}
 }
 
-void BPuzzle::apply_constraint1(CNF &des) {
+void BPuzzle::apply_constraint1(CNF &des) const {
 	int polars[2]{0, 1};
 	for (auto polar : polars) {
 		for (int l = 1; l <= SIZE; l++) {
@@ -133,6 +171,9 @@ void BPuzzle::apply_constraint2(CNF &des) {
 			des.add_clauses(c_clause_2);
 		}
 	}
+	for(int i = 0; i < t; i++)
+		delete bitmask[i];
+	delete bitmask;
 }
 
 void BPuzzle::apply_constraint3(CNF &des) const {
@@ -158,7 +199,7 @@ void BPuzzle::apply_constraint3(CNF &des) const {
 						auto sxyub_clause_1 = new Clause(3);
 						auto sxyub_clause_2 = new Clause(2);
 						auto sxyub_clause_3 = new Clause(2);
-						if (b == 0) {
+						if(s == 0){
 							sxyub_clause_1->literals[0] = &CNF::map[flatten(x, u)][0];
 							sxyub_clause_1->literals[1] = &CNF::map[flatten(y, u)][0];
 							sxyub_clause_1->literals[2] = &CNF::map[sxyub][1];
@@ -166,16 +207,19 @@ void BPuzzle::apply_constraint3(CNF &des) const {
 							sxyub_clause_2->literals[1] = &CNF::map[sxyub][0];
 							sxyub_clause_3->literals[0] = &CNF::map[flatten(y, u)][1];
 							sxyub_clause_3->literals[1] = &CNF::map[sxyub][0];
+						}else{
+							sxyub_clause_1->literals[0] = &CNF::map[flatten(u, x)][1];
+							sxyub_clause_1->literals[1] = &CNF::map[flatten(u, y)][1];
+							sxyub_clause_1->literals[2] = &CNF::map[sxyub][1];
+							sxyub_clause_2->literals[0] = &CNF::map[flatten(u, x)][0];
+							sxyub_clause_2->literals[1] = &CNF::map[sxyub][0];
+							sxyub_clause_3->literals[0] = &CNF::map[flatten(u, y)][0];
+							sxyub_clause_3->literals[1] = &CNF::map[sxyub][0];
+						}
+						if (b == 0) {
 							sxyu_clause_1->literals[0] = &CNF::map[sxyub][1];
 							sxyu_clause_2->literals[0] = &CNF::map[sxyub][0];
 						} else {
-							sxyub_clause_1->literals[0] = &CNF::map[flatten(u, x)][0];
-							sxyub_clause_1->literals[1] = &CNF::map[flatten(u, y)][0];
-							sxyub_clause_1->literals[2] = &CNF::map[sxyub][1];
-							sxyub_clause_2->literals[0] = &CNF::map[flatten(u, x)][1];
-							sxyub_clause_2->literals[1] = &CNF::map[sxyub][0];
-							sxyub_clause_3->literals[0] = &CNF::map[flatten(u, y)][1];
-							sxyub_clause_3->literals[1] = &CNF::map[sxyub][0];
 							sxyu_clause_1->literals[1] = &CNF::map[sxyub][1];
 							sxyu_clause_3->literals[0] = &CNF::map[sxyub][0];
 						}
@@ -245,19 +289,52 @@ Status BPuzzle::solve() {
 			for(int y = 1; y <= SIZE; y++)
 				table[x - 1][y - 1] = sat.result.literals[flatten(x, y)].val;
 		return done;
+	}else{
+		return unholdable;
 	}
 }
 
 void BPuzzle::print() {
-	for(auto & i : table){
-		for(auto & j : i){
-			if(j == positive)
+	for(int x = 0; x < SIZE; x++){
+		for(int y = 0; y < SIZE; y++){
+			if(table[x][y] == positive)
 				printf("1 ");
-			else if(j == negative)
+			else if(table[x][y] == negative)
 				printf("0 ");
 			else
 				printf("  ");
 		}
 		printf("\n");
 	}
+}
+
+void BPuzzle::fsave(const char *filename) {
+	FILE * fp;
+	if((fp = fopen(filename, "w")) == nullptr){
+		printf("error occurred while opening file %s", filename);
+		exit(-1);
+	}
+	for(int x = 0; x < SIZE; x++){
+		for(int y = 0; y < SIZE; y++){
+			if(table[x][y] == positive)
+				fprintf(fp, "1 ");
+			else if(table[x][y] == negative)
+				fprintf(fp, "0 ");
+			else
+				fprintf(fp, "  ");
+		}
+		fprintf(fp, "\n");
+	}
+}
+
+BPuzzle::~BPuzzle() {
+	for(int i = 0; i < SIZE; i++)
+		delete table[i];
+	delete table;
+	for(int i = 0; i < SIZE; i++)
+		delete flattenTable[i];
+	delete flattenTable;
+	for(int i = 0; i < sxyub; i++)
+		delete CNF::map[i];
+	delete CNF::map;
 }

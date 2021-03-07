@@ -10,6 +10,18 @@
 DPLL.h
 /mnt/c/Users/WADwi/CLionProjects/project-ds/DPLL.h
 
+/mnt/c/Users/WADwi/CLionProjects/project-ds/BPuzzleGen.cpp
+BPuzzleGen.h
+/mnt/c/Users/WADwi/CLionProjects/project-ds/BPuzzleGen.h
+random
+-
+time.h
+-
+
+/mnt/c/Users/WADwi/CLionProjects/project-ds/BPuzzleGen.h
+BPuzzle.h
+/mnt/c/Users/WADwi/CLionProjects/project-ds/BPuzzle.h
+
 /mnt/c/Users/WADwi/CLionProjects/project-ds/CNF.h
 stdio.h
 -
@@ -31,6 +43,8 @@ CNF.h
 /mnt/c/Users/WADwi/CLionProjects/project-ds/test.cpp
 BPuzzle.h
 /mnt/c/Users/WADwi/CLionProjects/project-ds/BPuzzle.h
+BPuzzleGen.h
+/mnt/c/Users/WADwi/CLionProjects/project-ds/BPuzzleGen.h
 time.h
 -
 

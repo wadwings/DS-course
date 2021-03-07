@@ -3,7 +3,7 @@
 //
 
 #include "Strategy.h"
-namespace Strategies {
+namespace CNF_Strategies {
 	int linear(CNF &cnf) {
 		for (int i = 0; i < cnf.literals_len; i++) {
 			if (cnf.literals[i].val == undefined) {

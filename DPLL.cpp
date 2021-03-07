@@ -127,7 +127,7 @@ void DPLL::save_result(CNF &cnf, int status) {
 	}
 }
 int DPLL::choose(CNF &cnf){
-	return Strategies::linear(cnf);
+	return CNF_Strategies::frequential(cnf);
 }
 
 Status DPLL::check(const CNF & src){
@@ -143,6 +143,6 @@ Status DPLL::check(const CNF & src){
 			return unholdable;
 		cur = cur->next;
 	}
-	printf("Solution Passed!\n");
+	//printf("Solution Passed!\n");
 	return holdable;
 }

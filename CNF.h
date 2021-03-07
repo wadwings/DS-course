@@ -39,7 +39,6 @@ typedef struct CNF {
 	static Literal ** map;
 	int literals_len;
 	int clauses_len;
-  Literal ** bind;
 	CNF();
 	CNF(char *filename);
 	CNF(const CNF & src);

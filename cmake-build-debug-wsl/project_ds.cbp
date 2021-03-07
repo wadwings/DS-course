@@ -90,6 +90,12 @@
 		<Unit filename="/mnt/c/Users/WADwi/CLionProjects/project-ds/BPuzzle.h">
 			<Option target="project_ds"/>
 		</Unit>
+		<Unit filename="/mnt/c/Users/WADwi/CLionProjects/project-ds/BPuzzleGen.cpp">
+			<Option target="project_ds"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/WADwi/CLionProjects/project-ds/BPuzzleGen.h">
+			<Option target="project_ds"/>
+		</Unit>
 		<Unit filename="/mnt/c/Users/WADwi/CLionProjects/project-ds/CNF.cpp">
 			<Option target="project_ds"/>
 		</Unit>

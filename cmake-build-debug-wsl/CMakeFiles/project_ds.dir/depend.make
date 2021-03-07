@@ -7,6 +7,13 @@ CMakeFiles/project_ds.dir/BPuzzle.cpp.o: ../CNF.h
 CMakeFiles/project_ds.dir/BPuzzle.cpp.o: ../DPLL.h
 CMakeFiles/project_ds.dir/BPuzzle.cpp.o: ../Strategy.h
 
+CMakeFiles/project_ds.dir/BPuzzleGen.cpp.o: ../BPuzzle.h
+CMakeFiles/project_ds.dir/BPuzzleGen.cpp.o: ../BPuzzleGen.cpp
+CMakeFiles/project_ds.dir/BPuzzleGen.cpp.o: ../BPuzzleGen.h
+CMakeFiles/project_ds.dir/BPuzzleGen.cpp.o: ../CNF.h
+CMakeFiles/project_ds.dir/BPuzzleGen.cpp.o: ../DPLL.h
+CMakeFiles/project_ds.dir/BPuzzleGen.cpp.o: ../Strategy.h
+
 CMakeFiles/project_ds.dir/CNF.cpp.o: ../CNF.cpp
 CMakeFiles/project_ds.dir/CNF.cpp.o: ../CNF.h
 
@@ -20,6 +27,7 @@ CMakeFiles/project_ds.dir/Strategy.cpp.o: ../Strategy.cpp
 CMakeFiles/project_ds.dir/Strategy.cpp.o: ../Strategy.h
 
 CMakeFiles/project_ds.dir/test.cpp.o: ../BPuzzle.h
+CMakeFiles/project_ds.dir/test.cpp.o: ../BPuzzleGen.h
 CMakeFiles/project_ds.dir/test.cpp.o: ../CNF.h
 CMakeFiles/project_ds.dir/test.cpp.o: ../DPLL.h
 CMakeFiles/project_ds.dir/test.cpp.o: ../Strategy.h

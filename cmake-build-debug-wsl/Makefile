@@ -150,6 +150,33 @@ BPuzzle.cpp.s:
 	$(MAKE) -f CMakeFiles/project_ds.dir/build.make CMakeFiles/project_ds.dir/BPuzzle.cpp.s
 .PHONY : BPuzzle.cpp.s
 
+BPuzzleGen.o: BPuzzleGen.cpp.o
+
+.PHONY : BPuzzleGen.o
+
+# target to build an object file
+BPuzzleGen.cpp.o:
+	$(MAKE) -f CMakeFiles/project_ds.dir/build.make CMakeFiles/project_ds.dir/BPuzzleGen.cpp.o
+.PHONY : BPuzzleGen.cpp.o
+
+BPuzzleGen.i: BPuzzleGen.cpp.i
+
+.PHONY : BPuzzleGen.i
+
+# target to preprocess a source file
+BPuzzleGen.cpp.i:
+	$(MAKE) -f CMakeFiles/project_ds.dir/build.make CMakeFiles/project_ds.dir/BPuzzleGen.cpp.i
+.PHONY : BPuzzleGen.cpp.i
+
+BPuzzleGen.s: BPuzzleGen.cpp.s
+
+.PHONY : BPuzzleGen.s
+
+# target to generate assembly for a file
+BPuzzleGen.cpp.s:
+	$(MAKE) -f CMakeFiles/project_ds.dir/build.make CMakeFiles/project_ds.dir/BPuzzleGen.cpp.s
+.PHONY : BPuzzleGen.cpp.s
+
 CNF.o: CNF.cpp.o
 
 .PHONY : CNF.o
@@ -270,6 +297,9 @@ help:
 	@echo "... BPuzzle.o"
 	@echo "... BPuzzle.i"
 	@echo "... BPuzzle.s"
+	@echo "... BPuzzleGen.o"
+	@echo "... BPuzzleGen.i"
+	@echo "... BPuzzleGen.s"
 	@echo "... CNF.o"
 	@echo "... CNF.i"
 	@echo "... CNF.s"
