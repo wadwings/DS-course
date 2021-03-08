@@ -169,6 +169,33 @@ BPuzzle.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\project_ds.dir\build.make CMakeFiles/project_ds.dir/BPuzzle.cpp.s
 .PHONY : BPuzzle.cpp.s
 
+BPuzzleGen.obj: BPuzzleGen.cpp.obj
+
+.PHONY : BPuzzleGen.obj
+
+# target to build an object file
+BPuzzleGen.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\project_ds.dir\build.make CMakeFiles/project_ds.dir/BPuzzleGen.cpp.obj
+.PHONY : BPuzzleGen.cpp.obj
+
+BPuzzleGen.i: BPuzzleGen.cpp.i
+
+.PHONY : BPuzzleGen.i
+
+# target to preprocess a source file
+BPuzzleGen.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\project_ds.dir\build.make CMakeFiles/project_ds.dir/BPuzzleGen.cpp.i
+.PHONY : BPuzzleGen.cpp.i
+
+BPuzzleGen.s: BPuzzleGen.cpp.s
+
+.PHONY : BPuzzleGen.s
+
+# target to generate assembly for a file
+BPuzzleGen.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\project_ds.dir\build.make CMakeFiles/project_ds.dir/BPuzzleGen.cpp.s
+.PHONY : BPuzzleGen.cpp.s
+
 CNF.obj: CNF.cpp.obj
 
 .PHONY : CNF.obj
@@ -289,6 +316,9 @@ help:
 	@echo ... BPuzzle.obj
 	@echo ... BPuzzle.i
 	@echo ... BPuzzle.s
+	@echo ... BPuzzleGen.obj
+	@echo ... BPuzzleGen.i
+	@echo ... BPuzzleGen.s
 	@echo ... CNF.obj
 	@echo ... CNF.i
 	@echo ... CNF.s

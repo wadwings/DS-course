@@ -5,6 +5,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
   "C:/Users/WADwi/CLionProjects/project-ds/BPuzzle.cpp" "C:/Users/WADwi/CLionProjects/project-ds/cmake-build-release-mingw/CMakeFiles/project_ds.dir/BPuzzle.cpp.obj"
+  "C:/Users/WADwi/CLionProjects/project-ds/BPuzzleGen.cpp" "C:/Users/WADwi/CLionProjects/project-ds/cmake-build-release-mingw/CMakeFiles/project_ds.dir/BPuzzleGen.cpp.obj"
   "C:/Users/WADwi/CLionProjects/project-ds/CNF.cpp" "C:/Users/WADwi/CLionProjects/project-ds/cmake-build-release-mingw/CMakeFiles/project_ds.dir/CNF.cpp.obj"
   "C:/Users/WADwi/CLionProjects/project-ds/DPLL.cpp" "C:/Users/WADwi/CLionProjects/project-ds/cmake-build-release-mingw/CMakeFiles/project_ds.dir/DPLL.cpp.obj"
   "C:/Users/WADwi/CLionProjects/project-ds/Strategy.cpp" "C:/Users/WADwi/CLionProjects/project-ds/cmake-build-release-mingw/CMakeFiles/project_ds.dir/Strategy.cpp.obj"

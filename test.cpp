@@ -6,30 +6,30 @@
 #include "BPuzzleGen.h"
 #include <time.h>
 int main(){
-	//system("chcp 65001");//终端输出中文
+	system("chcp 65001");//终端输出中文
 	int i1 = clock();
-//	DPLL dpll("/mnt/d/S/Problem11-100.cnf");
-//	if(dpll.solve() != unholdable){
-//		for(int i = 0; i < dpll.result.literals_len; i++){
-//			printf("变元%d的值为%d\n", i + 1, dpll.result.literals[i].val);
-//		}
-//	};
+	DPLL dpll("/mnt/d/Desktop/程序设计综合课程设计任务及指导学生包/SAT测试备选算例/基准算例/性能测试/ais10.cnf");
+	if(dpll.solve() != unholdable){
+		for(int i = 0; i < dpll.result.literals_len; i++){
+			printf("变元%d的值为%d\n", i + 1, dpll.result.literals[i].val);
+		}
+	};
 //  BPuzzle bpuzzle("/mnt/d/S/binarypuzzle1", 6);
 //  bpuzzle.sat.origin.to_string();
 //	if(bpuzzle.solve() != unholdable){
 //		bpuzzle.print();
 //		bpuzzle.fsave("/mnt/d/S/binarypuzzle1_solution");
 //	};
-	BPuzzleGen generator("/mnt/d/S/binarypuzzle1_solution", 6);
-	generator.generate();
-	generator.print();
-	generator.fsave("/mnt/d/S/binarypuzzle4");
-	BPuzzle bpuzzle("/mnt/d/S/binarypuzzle4", 6);
-//	bpuzzle.sat.origin.to_string();
-	if(bpuzzle.solve() != unholdable){
-		bpuzzle.print();
-		bpuzzle.fsave("/mnt/d/S/binarypuzzle4_solution");
-	};
+//	BPuzzleGen generator("/mnt/d/S/binarypuzzle3_solution", 8);
+//	generator.generate();
+//	generator.print();
+//	generator.fsave("/mnt/d/S/binarypuzzle4");
+//	BPuzzle bpuzzle("/mnt/d/S/binarypuzzle4", 8);
+////	bpuzzle.sat.origin.to_string();
+//	if(bpuzzle.solve() != unholdable){
+//		bpuzzle.print();
+//		bpuzzle.fsave("/mnt/d/S/binarypuzzle4_solution");
+//	};
 	int i2 = clock();
 	printf("%f s", (i2 - i1) / 1000000.0);
 	fflush(stdout);

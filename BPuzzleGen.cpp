@@ -92,11 +92,11 @@ Status BPuzzleGen::print() {
 	for(int x = 0; x < SIZE; x++){
 		for(int y = 0; y < SIZE; y++){
 			if(table[x][y] == positive)
-				printf("1 ");
+				printf("1  ");
 			else if(table[x][y] == negative)
-				printf("0 ");
+				printf("0  ");
 			else
-				printf("_ ");
+				printf("_  ");
 		}
 		printf("\n");
 	}
