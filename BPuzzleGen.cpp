@@ -48,8 +48,8 @@ Status BPuzzleGen::generate() {
  			table[map[count] / SIZE][map[count] % SIZE] = dis_map[SIZE * SIZE - count - 1] > 0 ? positive : negative;
  			dis_map[SIZE * SIZE - count - 1] = 0;
 			++count;
-			print();
-			fflush(stdout);
+//			print();
+//			fflush(stdout);
 		}
 		if(_try[count][index] == 1)
 			continue;
@@ -58,8 +58,8 @@ Status BPuzzleGen::generate() {
 			if(_try[count][index] == 0){
 				_try[count][index] = 1;
 				++disable[count];
-				printf("%d-%d\n", count, disable[count]);
-				fflush(stdout);
+//				printf("%d-%d\n", count, disable[count]);
+//				fflush(stdout);
 			}
 			table[index / SIZE][index % SIZE] = table[index / SIZE][index % SIZE] == positive ? negative : positive;
 		}else{
@@ -73,8 +73,8 @@ Status BPuzzleGen::generate() {
 			}
 			--count;
 			table[index / SIZE][index % SIZE] = undefined;
-			print();
-			fflush(stdout);
+//			print();
+//			fflush(stdout);
 		}
 	}
 	free(seed);

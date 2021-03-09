@@ -16,6 +16,7 @@ enum Status {
 struct DPLL {
 	CNF origin;
 	CNF result;
+	int isSatisfly = 0;
 	DPLL() = default;
 	DPLL(const CNF & src);
 	inline static Status assign(CNF &cnf, int id);
@@ -25,6 +26,7 @@ struct DPLL {
 	Status perform_dpll(CNF &cnf);
 	Status check(const CNF & src);
 	void save_result(CNF &cnf, int status);
+	void print_res(char * path, float time);
 };
 
 #endif //PROJECT_DS_DPLL_H

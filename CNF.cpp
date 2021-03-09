@@ -15,16 +15,28 @@ CNF::CNF(char *filename) {
 		printf("error occurred when open file %s", filename);
 		exit(-1);
 	};
-	while (!feof(fp)) {
+	while (1) {
 		c = fgetc(fp);
 		if (c == 'p')
 			break;
 		while (c != '\n') {
-			c = fgetc(fp);
+			if(feof(fp)){
+				printf("the file %s is not a standard CNF file", filename);
+				exit(-1);
+			}
+				c = fgetc(fp);
+		}
+		if(feof(fp)){
+			printf("the file %s is not a standard CNF file", filename);
+			exit(-1);
 		}
 	} //remove comment
-	for (int i = 0; i < 5; i++)
-		fgetc(fp); // remove " cnf "
+	char t[100];
+	fscanf(fp, "%s", t);
+	if(strncmp(t, "cnf", 3) != 0){
+		printf("the file %s is not a standard CNF file", filename);
+		exit(-1);
+	}
 	fscanf(fp, "%d %d", &literals_len, &clauses_len);
 	this->clauses_len = clauses_len;
 	this->literals_len = literals_len;
@@ -133,7 +145,7 @@ void safe_strcat(char *_destination, char *src, int &size) {
 }
 
 char *CNF::to_string() {
-	char *str = (char *) malloc(sizeof(char) * 1000000);
+	char *str = (char *) malloc(sizeof(char) * 100000000);
 	int size = 7000000;
 	strcpy(str, "p cnf ");
 	char temp[10];
@@ -196,4 +208,24 @@ void CNF::remove_clauses(Clause * pre){
 	auto t = pre->next;
 	pre->next = pre->next->next;
 	delete t;
+}
+
+void CNF::jiexi() {
+	auto t = this->clauses->next;
+	while(t){
+		printf("(");
+		for(int i = 0; i < t->count;i++){
+			int temp = t->literals[i]->id * (t->literals[i]->val == positive ? 1 : -1);
+			if(i != t->count - 1)
+				printf("%dV", temp);
+			else
+				printf("%d", temp);
+		}
+		printf(")");
+		if(t->next != nullptr)
+			printf("∧\n");
+		else
+			printf("\n");
+		t = t->next;
+	}
 }

@@ -8,100 +8,114 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="C:/Users/WADwi/CLionProjects/project-ds/cmake-build-debug"/>
+				<Option working_dir="/home/wings/DS-course/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="D:/PROGRA~1/MICROS~1/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/WADwi/CLionProjects/project-ds/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="D:/PROGRA~1/MICROS~1/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/WADwi/CLionProjects/project-ds/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="D:/PROGRA~1/MICROS~1/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/WADwi/CLionProjects/project-ds/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="D:/PROGRA~1/MICROS~1/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/WADwi/CLionProjects/project-ds/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="project_ds">
-				<Option output="C:/Users/WADwi/CLionProjects/project-ds/cmake-build-debug/project_ds.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="C:/Users/WADwi/CLionProjects/project-ds/cmake-build-debug"/>
-				<Option object_output="./"/>
-				<Option type="1"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add directory="D:/Program Files/Microsoft VS Code/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++"/>
-					<Add directory="D:/Program Files/Microsoft VS Code/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32"/>
-					<Add directory="D:/Program Files/Microsoft VS Code/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward"/>
-					<Add directory="D:/Program Files/Microsoft VS Code/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include"/>
-					<Add directory="D:/Program Files/Microsoft VS Code/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed"/>
-					<Add directory="D:/Program Files/Microsoft VS Code/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../x86_64-w64-mingw32/include"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="D:/PROGRA~1/MICROS~1/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/WADwi/CLionProjects/project-ds/cmake-build-debug/Makefile&quot;  VERBOSE=1 project_ds"/>
-					<CompileFile command="D:/PROGRA~1/MICROS~1/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/WADwi/CLionProjects/project-ds/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="D:/PROGRA~1/MICROS~1/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/WADwi/CLionProjects/project-ds/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="D:/PROGRA~1/MICROS~1/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/WADwi/CLionProjects/project-ds/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="project_ds/fast">
-				<Option output="C:/Users/WADwi/CLionProjects/project-ds/cmake-build-debug/project_ds.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="C:/Users/WADwi/CLionProjects/project-ds/cmake-build-debug"/>
-				<Option object_output="./"/>
-				<Option type="1"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add directory="D:/Program Files/Microsoft VS Code/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++"/>
-					<Add directory="D:/Program Files/Microsoft VS Code/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32"/>
-					<Add directory="D:/Program Files/Microsoft VS Code/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward"/>
-					<Add directory="D:/Program Files/Microsoft VS Code/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include"/>
-					<Add directory="D:/Program Files/Microsoft VS Code/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed"/>
-					<Add directory="D:/Program Files/Microsoft VS Code/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../x86_64-w64-mingw32/include"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="D:/PROGRA~1/MICROS~1/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/WADwi/CLionProjects/project-ds/cmake-build-debug/Makefile&quot;  VERBOSE=1 project_ds/fast"/>
-					<CompileFile command="D:/PROGRA~1/MICROS~1/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/WADwi/CLionProjects/project-ds/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="D:/PROGRA~1/MICROS~1/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/WADwi/CLionProjects/project-ds/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="D:/PROGRA~1/MICROS~1/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/WADwi/CLionProjects/project-ds/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="edit_cache">
-				<Option working_dir="C:/Users/WADwi/CLionProjects/project-ds/cmake-build-debug"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="D:/PROGRA~1/MICROS~1/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/WADwi/CLionProjects/project-ds/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="D:/PROGRA~1/MICROS~1/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/WADwi/CLionProjects/project-ds/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="D:/PROGRA~1/MICROS~1/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/WADwi/CLionProjects/project-ds/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="D:/PROGRA~1/MICROS~1/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/WADwi/CLionProjects/project-ds/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j16 -f &quot;/home/wings/DS-course/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j16 -f &quot;/home/wings/DS-course/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j16 -f &quot;/home/wings/DS-course/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j16 -f &quot;/home/wings/DS-course/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="C:/Users/WADwi/CLionProjects/project-ds/cmake-build-debug"/>
+				<Option working_dir="/home/wings/DS-course/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="D:/PROGRA~1/MICROS~1/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/WADwi/CLionProjects/project-ds/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="D:/PROGRA~1/MICROS~1/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/WADwi/CLionProjects/project-ds/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="D:/PROGRA~1/MICROS~1/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/WADwi/CLionProjects/project-ds/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="D:/PROGRA~1/MICROS~1/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/WADwi/CLionProjects/project-ds/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j16 -f &quot;/home/wings/DS-course/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j16 -f &quot;/home/wings/DS-course/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j16 -f &quot;/home/wings/DS-course/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j16 -f &quot;/home/wings/DS-course/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/home/wings/DS-course/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j16 -f &quot;/home/wings/DS-course/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j16 -f &quot;/home/wings/DS-course/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j16 -f &quot;/home/wings/DS-course/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j16 -f &quot;/home/wings/DS-course/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="project_ds">
+				<Option output="/home/wings/DS-course/cmake-build-debug/project_ds" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/wings/DS-course/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../include/c++/10.2.0"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../include/c++/10.2.0/x86_64-pc-linux-gnu"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../include/c++/10.2.0/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/10.2.0/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/10.2.0/include-fixed"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j16 -f &quot;/home/wings/DS-course/cmake-build-debug/Makefile&quot;  VERBOSE=1 project_ds"/>
+					<CompileFile command="/usr/bin/make -j16 -f &quot;/home/wings/DS-course/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j16 -f &quot;/home/wings/DS-course/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j16 -f &quot;/home/wings/DS-course/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="project_ds/fast">
+				<Option output="/home/wings/DS-course/cmake-build-debug/project_ds" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/wings/DS-course/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../include/c++/10.2.0"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../include/c++/10.2.0/x86_64-pc-linux-gnu"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../include/c++/10.2.0/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/10.2.0/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/10.2.0/include-fixed"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j16 -f &quot;/home/wings/DS-course/cmake-build-debug/Makefile&quot;  VERBOSE=1 project_ds/fast"/>
+					<CompileFile command="/usr/bin/make -j16 -f &quot;/home/wings/DS-course/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j16 -f &quot;/home/wings/DS-course/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j16 -f &quot;/home/wings/DS-course/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="C:/Users/WADwi/CLionProjects/project-ds/CNF.cpp">
+		<Unit filename="/home/wings/DS-course/BPuzzle.cpp">
 			<Option target="project_ds"/>
 		</Unit>
-		<Unit filename="C:/Users/WADwi/CLionProjects/project-ds/CNF.h">
+		<Unit filename="/home/wings/DS-course/BPuzzle.h">
 			<Option target="project_ds"/>
 		</Unit>
-		<Unit filename="C:/Users/WADwi/CLionProjects/project-ds/DPLL.cpp">
+		<Unit filename="/home/wings/DS-course/BPuzzleGen.cpp">
 			<Option target="project_ds"/>
 		</Unit>
-		<Unit filename="C:/Users/WADwi/CLionProjects/project-ds/DPLL.h">
+		<Unit filename="/home/wings/DS-course/BPuzzleGen.h">
 			<Option target="project_ds"/>
 		</Unit>
-		<Unit filename="C:/Users/WADwi/CLionProjects/project-ds/Strategy.cpp">
+		<Unit filename="/home/wings/DS-course/CNF.cpp">
 			<Option target="project_ds"/>
 		</Unit>
-		<Unit filename="C:/Users/WADwi/CLionProjects/project-ds/Strategy.h">
+		<Unit filename="/home/wings/DS-course/CNF.h">
 			<Option target="project_ds"/>
 		</Unit>
-		<Unit filename="C:/Users/WADwi/CLionProjects/project-ds/test.cpp">
+		<Unit filename="/home/wings/DS-course/DPLL.cpp">
 			<Option target="project_ds"/>
 		</Unit>
-		<Unit filename="C:/Users/WADwi/CLionProjects/project-ds/CMakeLists.txt">
+		<Unit filename="/home/wings/DS-course/DPLL.h">
+			<Option target="project_ds"/>
+		</Unit>
+		<Unit filename="/home/wings/DS-course/Strategy.cpp">
+			<Option target="project_ds"/>
+		</Unit>
+		<Unit filename="/home/wings/DS-course/Strategy.h">
+			<Option target="project_ds"/>
+		</Unit>
+		<Unit filename="/home/wings/DS-course/test.cpp">
+			<Option target="project_ds"/>
+		</Unit>
+		<Unit filename="/home/wings/DS-course/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

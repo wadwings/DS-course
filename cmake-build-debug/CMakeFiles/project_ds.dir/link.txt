@@ -1,3 +1,1 @@
-"D:\Program Files (x86)\CLion 2020.3.2\bin\cmake\win\bin\cmake.exe" -E rm -f CMakeFiles\project_ds.dir/objects.a
-D:\PROGRA~1\MICROS~1\mingw64\bin\ar.exe cr CMakeFiles\project_ds.dir/objects.a @CMakeFiles\project_ds.dir\objects1.rsp
-D:\PROGRA~1\MICROS~1\mingw64\bin\G__~1.EXE -g   -Wl,--whole-archive CMakeFiles\project_ds.dir/objects.a -Wl,--no-whole-archive  -o project_ds.exe -Wl,--out-implib,libproject_ds.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\project_ds.dir\linklibs.rsp
+/usr/bin/c++  -g  -rdynamic CMakeFiles/project_ds.dir/DPLL.cpp.o CMakeFiles/project_ds.dir/CNF.cpp.o CMakeFiles/project_ds.dir/Strategy.cpp.o CMakeFiles/project_ds.dir/test.cpp.o CMakeFiles/project_ds.dir/BPuzzle.cpp.o CMakeFiles/project_ds.dir/BPuzzleGen.cpp.o  -o project_ds 

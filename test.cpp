@@ -4,37 +4,87 @@
 
 #include "BPuzzle.h"
 #include "BPuzzleGen.h"
+#include <unistd.h>
 #include <time.h>
-int main(){
-	system("chcp 65001");//终端输出中文
-	int i1 = clock();
-	DPLL dpll("/mnt/d/Desktop/程序设计综合课程设计任务及指导学生包/SAT测试备选算例/基准算例/性能测试/ais10.cnf");
-	if(dpll.solve() != unholdable){
-		for(int i = 0; i < dpll.result.literals_len; i++){
+//#include <string>
+
+void case1(){
+	char t[100];
+	printf("CNF file path:");
+	scanf("%s", t);
+	int t1 = clock();
+	DPLL dpll(t);
+	dpll.origin.jiexi();
+	if (dpll.solve() != unholdable) {
+		for (int i = 0; i < dpll.result.literals_len; i++) {
 			printf("变元%d的值为%d\n", i + 1, dpll.result.literals[i].val);
 		}
 	};
-//  BPuzzle bpuzzle("/mnt/d/S/binarypuzzle1", 6);
-//  bpuzzle.sat.origin.to_string();
-//	if(bpuzzle.solve() != unholdable){
-//		bpuzzle.print();
-//		bpuzzle.fsave("/mnt/d/S/binarypuzzle1_solution");
-//	};
-//	BPuzzleGen generator("/mnt/d/S/binarypuzzle3_solution", 8);
-//	generator.generate();
-//	generator.print();
-//	generator.fsave("/mnt/d/S/binarypuzzle4");
-//	BPuzzle bpuzzle("/mnt/d/S/binarypuzzle4", 8);
-////	bpuzzle.sat.origin.to_string();
-//	if(bpuzzle.solve() != unholdable){
-//		bpuzzle.print();
-//		bpuzzle.fsave("/mnt/d/S/binarypuzzle4_solution");
-//	};
-	int i2 = clock();
-	printf("%f s", (i2 - i1) / 1000000.0);
-	fflush(stdout);
-//	CNF cnf("/mnt/d/Desktop/程序设计综合课程设计任务及指导学生包/SAT测试备选算例/满足算例/S/problem1-20.cnf");
-//	CNF cnf1 = cnf;
-//	cnf1.to_string();
+	printf("Print to Res file?(Y/N)\n");
+	getchar();
+	char c;
+	scanf("%c", &c);
+	int t2 = clock();
+	switch (c) {
+		case 'Y':
+			dpll.print_res(t, (float)(t2 - t1) / CLOCKS_PER_SEC * 1000);
+			break;
+		default:
+			break;
+	}
+	printf("%f ms", (double)(t2 - t1) / CLOCKS_PER_SEC * 1000);
+}
+
+void case2(){
+	char t[100];
+	int size;
+	printf("Puzzle file path & size:");
+	scanf("%s %d", t, &size);
+	int t1 = clock();
+	BPuzzle bpuzzle(t, size);
+	//	bpuzzle.sat.origin.to_string();
+	if(bpuzzle.solve() != unholdable){
+		bpuzzle.print();
+	};
+	int t2 = clock();
+	printf("%f ms", (double)(t2 - t1) / CLOCKS_PER_SEC * 1000);
+}
+
+void case3(){
+	char t[100];
+	int size;
+	printf("Puzzle file path & size:");
+	scanf("%s %d", t, &size);
+	int t1 = clock();
+	BPuzzleGen generator(t, size);
+	generator.generate();
+	generator.print();
+	generator.fsave("/home/wings/puzzle");
+	BPuzzle bpuzzle("/home/wings/puzzle", size);
+	if(bpuzzle.solve() != unholdable){
+		bpuzzle.print();
+	};
+	int t2 = clock();
+	printf("%f ms", (double)(t2 - t1) / CLOCKS_PER_SEC * 1000);
+}
+
+int main(int argc, char *argv[]) {
+	int c;
+	printf("1 for solve CNF\n2 for solve Puzzzle\n3 for generate Puzzle\n");
+	c = getc(stdin);
+	switch (c) {
+		case '1':
+			case1();
+			break;
+		case '2':
+			case2();
+			break;
+		case '3':
+			case3();
+			break;
+		default:
+			printf("wrong input!");
+			break;
+	}
 	return 0;
 }

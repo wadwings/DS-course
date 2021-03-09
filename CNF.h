@@ -47,6 +47,7 @@ typedef struct CNF {
 	char* to_string();
 	CNF& operator=(const CNF & src);
 	int real_len();
+	void jiexi();
 	~CNF();
 } CNF;
 

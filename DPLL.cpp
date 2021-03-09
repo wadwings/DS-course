@@ -70,9 +70,10 @@ Status DPLL::assign(CNF &cnf, int id) {
 Status DPLL::solve(){
 	CNF cnf = origin; // keep original cnf clean
 	auto status = perform_dpll(cnf);
-	if (status == pending || check(result)) {
+	if (status == pending || check(result) == unholdable) {
 		return Status::unholdable;
 	} else {
+		this->isSatisfly = 1;
 		return status;
 	}
 }
@@ -86,21 +87,6 @@ Status DPLL::perform_dpll(CNF &cnf) {
 		return pending;
 	int var = choose(cnf);
 	Value boolean[] = {positive, negative};
-//	Clause * clauses = (Clause *)calloc(sizeof(Clause), 1);
-//	int clauses_len = cnf.clauses_len;
-//	Clause * cur = clauses->next = (Clause *)calloc(sizeof(Clause), 1), * pre = clauses, * cur_cnf = cnf.clauses->next;
-//	while(cur_cnf){
-//		cur->count = cur_cnf->count;
-//		cur->literals = (Literal *)calloc(sizeof(Clause), cur_cnf->count);
-//		for(int i = 0; i < cur_cnf->count; i++)
-//			cur->literals[i] = cur_cnf->literals[i];
-//		cur->next = (Clause *)calloc(sizeof(Clause), 1);
-//		pre = cur;
-//		cur = cur->next;
-//		cur_cnf = cur_cnf->next;
-//	}
-//	free(pre->next);
-//	pre->next = nullptr;
 	for(int j = 0; j < 2; j++){
 		CNF cur_cnf = cnf;
 		Literal &var_ref = cur_cnf.literals[var - 1];
@@ -116,9 +102,6 @@ Status DPLL::perform_dpll(CNF &cnf) {
 		if(status == done)
 				return status;
 	}
-//	cnf.clauses_len = clauses_len;
-//	cnf.clauses = clauses;
-//	cnf.literals[var - 1].val = undefined;
 	return pending;
 }
 void DPLL::save_result(CNF &cnf, int status) {
@@ -143,6 +126,27 @@ Status DPLL::check(const CNF & src){
 			return unholdable;
 		cur = cur->next;
 	}
-	//printf("Solution Passed!\n");
+	printf("Solution Passed!\n");
 	return holdable;
 }
+
+void DPLL::print_res(char * path, float time){
+	int i = strlen(path);
+	path[i - 3] = 'r';
+	path[i - 2] = 'e';
+	path[i - 1] = 's';
+	FILE * fp;
+	if((fp = fopen(path, "w")) == nullptr){
+		printf("error occurred while opening file %s", path);
+		exit(-1);
+	}
+	fprintf(fp, "S %d", isSatisfly);
+	if(isSatisfly){
+		fprintf(fp, "\nV ");
+		for(int i = 0; i < result.literals_len; i++){
+			fprintf(fp, "%d ", result.literals[i].val);
+		}
+	}
+	fprintf(fp, "\nT %f ms", time);
+	fclose(fp);
+};

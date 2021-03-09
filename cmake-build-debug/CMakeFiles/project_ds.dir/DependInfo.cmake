@@ -4,10 +4,12 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "C:/Users/WADwi/CLionProjects/project-ds/CNF.cpp" "C:/Users/WADwi/CLionProjects/project-ds/cmake-build-debug/CMakeFiles/project_ds.dir/CNF.cpp.obj"
-  "C:/Users/WADwi/CLionProjects/project-ds/DPLL.cpp" "C:/Users/WADwi/CLionProjects/project-ds/cmake-build-debug/CMakeFiles/project_ds.dir/DPLL.cpp.obj"
-  "C:/Users/WADwi/CLionProjects/project-ds/Strategy.cpp" "C:/Users/WADwi/CLionProjects/project-ds/cmake-build-debug/CMakeFiles/project_ds.dir/Strategy.cpp.obj"
-  "C:/Users/WADwi/CLionProjects/project-ds/test.cpp" "C:/Users/WADwi/CLionProjects/project-ds/cmake-build-debug/CMakeFiles/project_ds.dir/test.cpp.obj"
+  "/home/wings/DS-course/BPuzzle.cpp" "/home/wings/DS-course/cmake-build-debug/CMakeFiles/project_ds.dir/BPuzzle.cpp.o"
+  "/home/wings/DS-course/BPuzzleGen.cpp" "/home/wings/DS-course/cmake-build-debug/CMakeFiles/project_ds.dir/BPuzzleGen.cpp.o"
+  "/home/wings/DS-course/CNF.cpp" "/home/wings/DS-course/cmake-build-debug/CMakeFiles/project_ds.dir/CNF.cpp.o"
+  "/home/wings/DS-course/DPLL.cpp" "/home/wings/DS-course/cmake-build-debug/CMakeFiles/project_ds.dir/DPLL.cpp.o"
+  "/home/wings/DS-course/Strategy.cpp" "/home/wings/DS-course/cmake-build-debug/CMakeFiles/project_ds.dir/Strategy.cpp.o"
+  "/home/wings/DS-course/test.cpp" "/home/wings/DS-course/cmake-build-debug/CMakeFiles/project_ds.dir/test.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

@@ -107,6 +107,7 @@ BPuzzle::BPuzzle(const char *filename, int size) : sat(){
 		sat.origin.add_clauses(t);
 	}
 	P2C(sat.origin);
+	fclose(fp);
 }
 
 void BPuzzle::P2C(CNF &des) {
@@ -325,6 +326,7 @@ void BPuzzle::fsave(const char *filename) {
 		}
 		fprintf(fp, "\n");
 	}
+	fclose(fp);
 }
 
 BPuzzle::~BPuzzle() {

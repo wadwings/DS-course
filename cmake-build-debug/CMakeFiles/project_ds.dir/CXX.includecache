@@ -6,15 +6,39 @@
 
 #IncludeRegexTransform: 
 
-C:/Users/WADwi/CLionProjects/project-ds/CNF.cpp
-CNF.h
-C:/Users/WADwi/CLionProjects/project-ds/CNF.h
+/home/wings/DS-course/BPuzzle.h
+DPLL.h
+/home/wings/DS-course/DPLL.h
 
-C:/Users/WADwi/CLionProjects/project-ds/CNF.h
+/home/wings/DS-course/BPuzzleGen.h
+BPuzzle.h
+/home/wings/DS-course/BPuzzle.h
+
+/home/wings/DS-course/CNF.h
 stdio.h
 -
 stdlib.h
 -
 string.h
+-
+
+/home/wings/DS-course/DPLL.h
+CNF.h
+/home/wings/DS-course/CNF.h
+Strategy.h
+/home/wings/DS-course/Strategy.h
+
+/home/wings/DS-course/Strategy.h
+CNF.h
+/home/wings/DS-course/CNF.h
+
+/home/wings/DS-course/test.cpp
+BPuzzle.h
+/home/wings/DS-course/BPuzzle.h
+BPuzzleGen.h
+/home/wings/DS-course/BPuzzleGen.h
+time.h
+-
+string
 -
 
