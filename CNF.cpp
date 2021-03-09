@@ -4,7 +4,7 @@
 #include "CNF.h"
 Literal ** CNF::map = nullptr;
 
-Clause::Clause(int _size) : literals((Literal**)calloc(sizeof(Literal *), _size)), count(_size), next(nullptr) {};
+Clause::Clause(int _size) : literals((Literal**)calloc(sizeof(Literal *), _size)), count(_size), next(nullptr){};
 
 CNF::CNF():clauses(new Clause(0)), literals(nullptr), tail(nullptr), clauses_len(0), literals_len(0){}
 CNF::CNF(char *filename) {
